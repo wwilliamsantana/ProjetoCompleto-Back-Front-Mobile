@@ -47,6 +47,7 @@ app.post("/games/:id/ads", async(request, response)=>{
   return response.json(ad)
 
 })
+
 app.get("/games/:id/ads", async (request, response)=>{
     const gameId = request.params.id
 
@@ -80,6 +81,7 @@ app.get("/games/:id/ads", async (request, response)=>{
     }))
 
 })
+
 app.get("/ads/:id/discord", async(request, response)=>{
     const adId = request.params.id
 
