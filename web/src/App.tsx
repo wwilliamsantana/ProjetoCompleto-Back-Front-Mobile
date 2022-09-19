@@ -63,53 +63,68 @@ function App() {
                   Publique um anúncio
                 </Dialog.Title>
 
-        
-                 
-                <form className="mt-8">
-
+                <form className="mt-8 flex flex-col gap-4">
+ 
                   <div className="flex flex-col gap-2">
                     <label className="font-semibold " htmlFor="game">Qual o game?</label>
                     <Input placeholder="Selecione o game que deseja jogar" id="game"/>
                   </div>
 
-                  <div>
+                  <div className="flex flex-col gap-2"> 
                     <label htmlFor="name">Seu nome(ou nickname)</label>
                     <Input id="name" placeholder="Como te chamam dentro do game?" />
                   </div>
 
-                  <div>
-                    <div>
+                  <div  className="grid grid-cols-2 gap-6">
+                    <div className="flex flex-col gap-2">
                       <label htmlFor="yearsPlaying">Joga há quantos anos?</label>
                       <Input id="yearsPlaying" placeholder="Tudo bem ser ZERO" />
                     </div>
-                    <div>
+                    <div className="flex flex-col gap-2">
                      <label htmlFor="discord">Qual seu Discord?</label>
                       <Input id="discord" placeholder="Usuario#0000" />
                     </div>
                   </div>
 
-                  <div>
-                    <div>
+                  <div className="flex gap-6">
+                    <div className="flex flex-col gap-2">
                        <label htmlFor="weekDays">Quando costuma jogar?</label>
+
+                       <div className="grid grid-cols-4 gap-2">
+                          <button className="w-8 h-8 bg-zinc-900 rounded" title="Domingo">D</button>
+                          <button className="w-8 h-8 bg-zinc-900 rounded" title="Segunda">S</button>
+                          <button className="w-8 h-8 bg-zinc-900 rounded" title="Terça">T</button>
+                          <button className="w-8 h-8 bg-zinc-900 rounded" title="Quarta">Q</button>
+                          <button className="w-8 h-8 bg-zinc-900 rounded" title="Quinta">Q</button>
+                          <button className="w-8 h-8 bg-zinc-900 rounded" title="Sexta">S</button>
+                          <button className="w-8 h-8 bg-zinc-900 rounded" title="Sábado">S</button>
+                        </div>
+
+
                     </div>
-                    <div>
+                    <div className="flex flex-col gap-2 flex-1">
                       <label htmlFor="">Qual horário do dia?</label>
-                     <div>
+                     <div className="grid grid-cols-2 gap-2">
                       <Input placeholder="De"/>
                       <Input placeholder="Até" />
                      </div>
                     </div>
                   </div>
 
-                  <div>
+                  <div className=" mt-2 flex gap-2 text-white font-normal text-sm">
                     <Input type="checkbox"  />
                     Costumo me conectar ao chat de voz
                   </div>
 
-                  <footer>
-                      <button>Cancelar</button>
-                      <button type="submit">
-                        <GameController/>
+                  <footer className="mt-4 flex justify-end gap-4">
+                      <Dialog.Close 
+                      type="button"
+                      className="px-5 h-12 bg-zinc-500 rounded-md hover:bg-zinc-600">Cancelar
+                      </Dialog.Close >
+                      <button
+                      className="flex items-center gap-2 px-5 h-12 bg-violet-500 rounded-md hover:bg-violet-600"
+                      type="submit">
+                        <GameController size={24}/>
                         Encontrar duo
                       </button>
                   </footer>
