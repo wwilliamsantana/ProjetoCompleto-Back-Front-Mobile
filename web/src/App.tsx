@@ -3,7 +3,7 @@ import {useEffect, useState} from "react"
 import { GameBanner } from "./components/GameBanner"
 import { CreateAdBanner } from "./components/CreateAdBanner"
 import * as Dialog from "@radix-ui/react-dialog"
-
+import axios from "axios"
 import logoImg from "./assets/logo-nlw.svg"
 
 
@@ -26,10 +26,9 @@ function App() {
 
 
   useEffect(()=>{
-    fetch("http://localhost:3333/games")
-    .then(res => res.json())
-    .then(data => {
-      setGame(data)
+    axios("http://localhost:3333/games")
+    .then(Response => {
+      setGame(Response.data)
     })
   }, [])
 
